@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base :: Layout(~{::title}, ~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Employees</title>
+</head>
+<body >
+	<section>
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-md-10 offset-md-1">
+					<div class="card">
+						<div class="card-header  text-center fs-4">Employee Details
+						</div>
+						<div class="fs-5">
+							<div th:if="${successMsg}" th:text="${successMsg}"
+								class="alert alert-success text-center w-100 mx-auto rounded shadow-sm mb-0">
+							</div>
+							<div th:if="${errorMsg}" th:text="${errorMsg}"
+								class="alert alert-danger text-center w-100 mx-auto rounded shadow-sm mb-0">
+							</div>
+						</div>
+						
+						<div class="card-body">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">Id</th>
+										<th scope="col">Name</th>
+										<th scope="col">Email</th>
+										<th scope="col">Address</th>
+										<th scope="col">Gender</th>
+										
+										<th scope="col">
+										Action
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="e:${empList}">
+										<th scope="row">[[${e.id}]]</th>
+										<td>[[${e.fullName}]]</td>
+										<td>[[${e.email}]]</td>
+										<td>[[${e.address}]]</td>
+										<td>[[${e.gender}]]</td>
+										<td>
+										<a th:href="@{'editEmp/'+${e.id}}" class="btn btn-sm btn-primary">Edit</a>
+										<a th:href="@{'deleteEmp/'+${e.id}}" class="btn btn-sm btn-secondary">Delete</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org"
+	th:replace ="~{base :: Layout(~{::title}, ~{::section})}">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+</head>
+<body class="bg-light">
+	<section class="d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+		<div class="container text-center">
+			<img src="https://img.icons8.com/clouds/500/employee-card.png" alt="Employee Logo" 
+				class="img-fluid mb-4" style="max-width: 180px;">
+			
+			<h1 class="display-5 fw-bold">Welcome to Employee Management System</h1>
+			<p class="lead mt-3">
+				A simple and efficient way to manage employee records using Spring Boot, JPA, and Thymeleaf.
+			</p>
+			<a href="/saveEmp" class="btn btn-primary btn-lg mt-4">Add New Employee</a>
+		</div>
+	</section>
+</body>
+</html>

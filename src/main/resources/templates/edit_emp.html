@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base :: Layout(~{::title}, ~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Edit Employee</title>
+</head>
+<body>
+	<section>
+
+		<div class="container mt-5">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="card">
+						<div class="card-header text-center">
+							<p class="fs-4">Edit Employee</p>
+						</div>
+
+						
+						<div class="card-body">
+
+							<form action="/updateEmpDtls" method="post">
+												<input type="hidden" name="id" th:value="${emp.id}">
+												
+							
+								<div class="mb-3">
+									<label class="form-label">Full Name </label> <input type="text"
+										class="form-control" id="" name="fullName"
+										th:value="${emp.fullName}">
+
+								</div>
+								<div class="mb-3">
+									<label class="form-label">Email </label> <input type="email"
+										name="email" class="form-control" th:value="${emp.email}">
+
+								</div>
+
+								<div class="mb-3">
+									<label class="form-label">Address </label> <input type="text"
+										name="address" class="form-control" th:value="${emp.address}">
+
+								</div>
+
+								<div class="mb-3">
+									<label class="form-label">Gender &nbsp; </label>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="gender"
+											value="Male" th:checked="${emp.gender == 'Male'}"> <label
+											class="form-check-label">Male</label>
+									</div>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="gender"
+											value="Female" th:checked="${emp.gender == 'Female'}">
+										<label class="form-check-label">Female</label>
+									</div>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="gender"
+											value="Other" th:checked="${emp.gender == 'Other'}">
+										<label class="form-check-label">Others</label>
+									</div>
+
+								</div>
+
+
+
+								<div class="mb-3">
+									<label class="form-label">Password</label> <input
+										type="password" name="password" class="form-control"
+										th:value="${emp.password}">
+								</div>
+
+								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="reset" class="btn btn-secondary">Reset</button>
+							</form>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+
+
+	</section>
+
+</body>
+</html>
