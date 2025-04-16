@@ -34,4 +34,6 @@ A simple and responsive **Employee Management System** built with **Spring Boot*
 - Maven 3.8+
 - Any IDE (IntelliJ, VS Code, Eclipse)
 
+## 🌐 Access the App
+### 👉 Visit: http://localhost:8080/ in your browser.
 
